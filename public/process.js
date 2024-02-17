@@ -7,9 +7,21 @@ $(document).ready(function(){
             console.log(curAddress);
             const shortdaddress = curAddress.slice(0, 3) + "..."+ curAddress.slice(-4);
             $('#Update_Wallet').text(shortdaddress); 
+
+            //// Post to database usser
+            $.post("./setuser",{
+                Address: curAddress
+            },function(data){
+                console.log(data);
+            });
+            
         })).catch((err)=>{
             console.log(err);
         })
+    })
+
+    $("#btndatabase").click(function(){
+
     })
 });
 

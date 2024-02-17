@@ -243,6 +243,7 @@
   --------------------------------------------------------------*/
   function modal() {
     $(".cs-modal_btn").on('click', function() {
+      console.log("active")
       var modalData = $(this).attr("data-modal") 
       $(`[data-modal='${modalData}']`).addClass('active')
     })

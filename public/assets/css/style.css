@@ -880,7 +880,7 @@ hr {
 .cs-primary_bg,
 .cs-primary_bg_hover:hover {
   background-color: #06182C;
-}
+ }
 
 .cs-accent_seperator_1 {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(33%, currentColor), color-stop(0%, rgba(255, 255, 255, 0)));
@@ -3693,7 +3693,7 @@ li.menu-item-has-children
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 259px;
+  height: 250px;
 }
 
 @media screen and (max-width: 575px) {
@@ -3728,7 +3728,9 @@ li.menu-item-has-children
 }
 
 .cs-dark {
-  background-color: #06182c;
+ /* background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/5-dots.png");
+  background-repeat: repeat;*/
+  background-color: #141616;
   color: rgba(255, 255, 255, 0.6);
 }
 

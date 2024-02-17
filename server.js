@@ -13,5 +13,17 @@ server.listen(3000);
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 
+// database 
+
+const mongoose = require('mongoose'); 
+mongoose.set("strictQuery", false);
+mongoose.connect('mongodb+srv://joyboy124:IhIFKUuXtfFzkHHm@cluster0.y78rjge.mongodb.net/erf404?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}, function(err){
+    if(err){
+        console.log("Database fail: "+ err)
+    } else
+    {
+        console.log("Database connect success")
+    }
+});
 
 require("./controllers/mint")(app);
