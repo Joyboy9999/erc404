@@ -24,7 +24,7 @@ module.exports = function(app){
     // Post to database
     app.post("/setuser", function(req,res){
         if(!req.body.Address ){
-            req.json({result:0, Status: "Not enough paramater"})
+            res.json({result:0, Status: "Not enough paramater"})
         }else{
             var newuser = new DBusers({
                 Address: req.body.Address,
@@ -33,11 +33,12 @@ module.exports = function(app){
             });
             newuser.save(function(err){
                 if(err){
-                    req.json({result:0, Status: "Save database error"})
+                    res.json({result:0, Status: "Save database error"})
                 }else{
                     res.json({result:1, Status: "Success!"});
                 }
             })
         }
     })
+
 }
