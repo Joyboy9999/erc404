@@ -235,3 +235,7 @@ to {
 .toast-success {
   background-color: #4caf50; /* Green */
 }
+
+.toast-error {
+  background-color: #e51219; /* Green */
+}

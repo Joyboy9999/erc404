@@ -1,135 +1,163 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>DINO ERC404 DATABASE</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        input#filterInput {
-            padding: 10px;
-            margin-bottom: 20px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:nth-child(even) {background-color: #f2f2f2;}
-        .total-row td {
-            font-weight: bold;
-            background-color: #f9f9f9;
-        }
-        .pagination {
-            margin-top: 20px;
-        }
-        .page-number {
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin-right: 5px;
-            background-color: #f8f8f8;
-        }
-        .page-number.active {
-            background-color: #4CAF50;
-            color: white;
-            border-color: #4CAF50;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input#filterInput {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      .total-row td {
+        font-weight: bold;
+        background-color: #f9f9f9;
+      }
+      .pagination {
+        margin-top: 20px;
+      }
+      .page-number {
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-right: 5px;
+        background-color: #f8f8f8;
+      }
+      .page-number.active {
+        background-color: #4caf50;
+        color: white;
+        border-color: #4caf50;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h2>DINO ERC404 DATABASE</h2>
-    <input type="text" id="filterInput" placeholder="Filter by Address...">
+    <!--- Total views-->
+    <div id="totalViews">
+      Current Views: <span id="viewCount"><%= total_view %></span>
+    </div>
+    <h1> </h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      // Your existing JavaScript code...
+
+      // Establish connection with socket.io on the client
+      var socket = io();
+
+      // Listen for 'updateTotalView' event from the server
+      socket.on("updateTotalView", function (data) {
+        // Update the DOM with the new count
+        document.getElementById("viewCount").textContent = data.total_view;
+      });
+
+      // The rest of your JavaScript code...
+    </script>
+    <!--end total view-->
+
+    <input type="text" id="filterInput" placeholder="Filter by Address..." />
     <table id="dataTable">
-        <thead>
-            <tr>
-                <th>Address</th>
-                <th>Payable</th>
-                <th>Time</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data rows will be inserted here -->
-        </tbody>
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>Payable</th>
+          <th>Time</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data rows will be inserted here -->
+      </tbody>
     </table>
     <div id="pagination" class="pagination">
-        <!-- Pagination buttons will be inserted here -->
+      <!-- Pagination buttons will be inserted here -->
     </div>
 
     <script>
-        var jsonData = <%- JSON.stringify(users) %>;
-        console.log(jsonData);
+      var jsonData = <%- JSON.stringify(users) %>;
+      console.log(jsonData);
 
-        var currentPage = 1;
-        var rowsPerPage = 10;
+      var currentPage = 1;
+      var rowsPerPage = 10;
 
-        function displayData(data, page) {
-            var tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
-            tableBody.innerHTML = ''; // Clear existing data
+      function displayData(data, page) {
+          var tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+          tableBody.innerHTML = ''; // Clear existing data
 
-            var start = (page - 1) * rowsPerPage;
-            var end = start + rowsPerPage;
-            var paginatedItems = data.slice(start, end);
+          var start = (page - 1) * rowsPerPage;
+          var end = start + rowsPerPage;
+          var paginatedItems = data.slice(start, end);
 
-            // Append rows to the table
-            paginatedItems.forEach(function(item) {
-                var row = `<tr>
-                                <td>${item.Address}</td>
-                                <td>${item.Payable}</td>
-                                <td>${item.Time}</td>
-                                <td>${item._id}</td>
-                           </tr>`;
-                tableBody.innerHTML += row;
-            });
+          // Append rows to the table
+          paginatedItems.forEach(function(item) {
+              var row = `<tr>
+                              <td>${item.Address}</td>
+                              <td>${item.Payable}</td>
+                              <td>${item.Time}</td>
+                              <td>${item._id}</td>
+                         </tr>`;
+              tableBody.innerHTML += row;
+          });
 
-            setupPagination(data.length, page);
-        }
+          setupPagination(data.length, page);
+      }
 
-        function setupPagination(totalItems, currentPage) {
-            var pageCount = Math.ceil(totalItems / rowsPerPage);
-            var pagination = document.getElementById('pagination');
-            pagination.innerHTML = ''; // Clear existing
+      function setupPagination(totalItems, currentPage) {
+          var pageCount = Math.ceil(totalItems / rowsPerPage);
+          var pagination = document.getElementById('pagination');
+          pagination.innerHTML = ''; // Clear existing
 
-            for (let i = 1; i <= pageCount; i++) {
-                var pageElement = document.createElement('span');
-                pageElement.innerHTML = i;
-                pageElement.className = 'page-number';
-                if (i === currentPage) pageElement.classList.add('active');
-                pageElement.addEventListener('click', function() {
-                    displayData(jsonData, i);
-                });
-                pagination.appendChild(pageElement);
-            }
-        }
+          for (let i = 1; i <= pageCount; i++) {
+              var pageElement = document.createElement('span');
+              pageElement.innerHTML = i;
+              pageElement.className = 'page-number';
+              if (i === currentPage) pageElement.classList.add('active');
+              pageElement.addEventListener('click', function() {
+                  displayData(jsonData, i);
+              });
+              pagination.appendChild(pageElement);
+          }
+      }
 
-        function filterData() {
-            var input = document.getElementById('filterInput');
-            var filter = input.value.toUpperCase();
-            var filteredData = jsonData.filter(function(item) {
-                return item.Address.toUpperCase().indexOf(filter) > -1;
-            });
-            displayData(filteredData, 1); // Start from page 1 after filter
-        }
+      function filterData() {
+          var input = document.getElementById('filterInput');
+          var filter = input.value.toUpperCase();
+          var filteredData = jsonData.filter(function(item) {
+              return item.Address.toUpperCase().indexOf(filter) > -1;
+          });
+          displayData(filteredData, 1); // Start from page 1 after filter
+      }
 
-        // Event listener for the filter input
-        document.getElementById('filterInput').addEventListener('keyup', function() {
-            filterData();
-            currentPage = 1; // Reset to first page
-        });
+      // Event listener for the filter input
+      document.getElementById('filterInput').addEventListener('keyup', function() {
+          filterData();
+          currentPage = 1; // Reset to first page
+      });
 
-        // Initially display all data on page 1
-        displayData(jsonData, currentPage);
+      // Initially display all data on page 1
+      displayData(jsonData, currentPage);
     </script>
-</body>
+  </body>
 </html>

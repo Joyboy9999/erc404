@@ -15,6 +15,7 @@
     "git": "^0.1.5",
     "moongose": "^1.0.0",
     "socket.io": "^4.7.4",
+    "uglify-js": "^3.17.4",
     "web3": "^4.5.0",
     "web3.js-browser": "^0.2.0"
   }

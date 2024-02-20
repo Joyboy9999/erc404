@@ -1,416 +1,79 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Laralink" />
+    <!-- Favicon Icon -->
+    <link rel="icon" href="assets/img/favicon.png" />
+    <!-- Site Title -->
+    <title>NFT Minting or Collection Landing Page HTML Template</title>
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/firework.css" />
+    <script src="./scripts/web3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="process.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>var socket = io("http://localhost:3000"); </script>
+    <script src = "scripts/web3.js"></script>
+  </head>
 
-<head>
-  <!-- Meta Tags -->
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Laralink">
-  <!-- Favicon Icon -->
-  <link rel="icon" href="assets/img/favicon.png" />
-  <!-- Site Title -->
-  <title>NFT Minting or Collection Landing Page HTML Template</title>
-  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/slick.css">
-  <link rel="stylesheet" href="assets/css/plugins/animate.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/firework.css">
-  <script src="./scripts/web3.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  <script src="process.js"></script>
-</head>
+  <body class="cs-dark">
+    <div class="cs-preloader cs-white_bg cs-center">
+      <div class="cs-preloader_in">
+        <img src="assets/img/logo_mini.svg" alt="Logo" />
+      </div>
+    </div>
+    <!-- Start Header Section -->
+    <%- include('modal/header.ejs') %>
+    <!-- End Header Section -->
+    <div class="cs-height_80 cs-height_lg_80"></div>
 
+    <!-- Start Hero -->
+    <%- include('modal/bigimage.ejs') %>
+    <!-- End Hero -->
+    <div class="cs-height_100 cs-height_lg_70"></div>
+    <%- include('modal/aboutus.ejs') %>
+    <div class="cs-height_100 cs-height_lg_40"></div>
+    <%- include('modal/service.ejs') %>
+    <div class="cs-height_100 cs-height_lg_40"></div>
+    <!-- Start Fun Fact -->
+    <!--<%- include('modal/funfact.ejs') %> 
+    <!-- End Fun Fact -->
+    
+    <!-- Start Tending Item -->
+    <%- include('modal/listnft.ejs') %>
+    <!-- End Tending Item -->
 
-<body class="cs-dark">
-  <div class="cs-preloader cs-white_bg cs-center">
-    <div class="cs-preloader_in">
-      <img src="assets/img/logo_mini.svg" alt="Logo">
-    </div>
-  </div>
-  <!-- Start Header Section -->
-  <header class="cs-site_header cs-style1 cs-sticky-header cs-primary_color">
-    <div class="cs-main_header">
-      <div class="container">
-        <div class="cs-main_header_in">
-          <div class="cs-main_header_left">
-            <a class="cs-site_branding cs-accent_color" href="index.html">
-              <img src="assets/img/logo.svg" alt="Logo" class="cs-hide_dark">
-              <img src="assets/img/logo_white.svg" alt="Logo" class="cs-hide_white">
-            </a>
-          </div>
-         
-          <div class="cs-main_header_right">
-            <div class="cs-toolbox">
-              <span class="cs-icon_btn cs-mode_btn">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="cs-hide_dark iconify iconify--ph" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M233.54 142.23a8 8 0 0 0-8-2a88.08 88.08 0 0 1-109.8-109.8a8 8 0 0 0-10-10a104.84 104.84 0 0 0-52.91 37A104 104 0 0 0 136 224a103.09 103.09 0 0 0 62.52-20.88a104.84 104.84 0 0 0 37-52.91a8 8 0 0 0-1.98-7.98Zm-44.64 48.11A88 88 0 0 1 65.66 67.11a89 89 0 0 1 31.4-26A106 106 0 0 0 96 56a104.11 104.11 0 0 0 104 104a106 106 0 0 0 14.92-1.06a89 89 0 0 1-26.02 31.4Z"></path></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="cs-hide_white iconify iconify--ph" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M116 32V16a12 12 0 0 1 24 0v16a12 12 0 0 1-24 0Zm80 96a68 68 0 1 1-68-68a68.07 68.07 0 0 1 68 68Zm-24 0a44 44 0 1 0-44 44a44.05 44.05 0 0 0 44-44ZM51.51 68.49a12 12 0 1 0 17-17l-12-12a12 12 0 0 0-17 17Zm0 119l-12 12a12 12 0 0 0 17 17l12-12a12 12 0 1 0-17-17ZM196 72a12 12 0 0 0 8.49-3.51l12-12a12 12 0 0 0-17-17l-12 12A12 12 0 0 0 196 72Zm8.49 115.51a12 12 0 0 0-17 17l12 12a12 12 0 0 0 17-17ZM44 128a12 12 0 0 0-12-12H16a12 12 0 0 0 0 24h16a12 12 0 0 0 12-12Zm84 84a12 12 0 0 0-12 12v16a12 12 0 0 0 24 0v-16a12 12 0 0 0-12-12Zm112-96h-16a12 12 0 0 0 0 24h16a12 12 0 0 0 0-24Z"></path></svg>
-              </span>
-              <button id="connectMM" class="cs-btn cs-btn_filed cs-accent_btn cs-modal_btn" > 
-                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ion" width="1em" height="1em" viewBox="0 0 512 512"><rect width="416" height="288" x="48" y="144" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" rx="48" ry="48"></rect><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" d="M411.36 144v-30A50 50 0 0 0 352 64.9L88.64 109.85A50 50 0 0 0 48 159v49"></path><path fill="currentColor" d="M368 320a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z"></path></svg>
-                <span id = "Update_Wallet">Connect</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- End Header Section -->
-  <div class="cs-height_80 cs-height_lg_80"></div>
-  
-  <!-- Start Hero -->
-  <div class="cs-hero cs-style1 cs-type2 cs-bg text-center cs-ripple_version" data-src="assets/img/hero_bg.jpeg" id="home">
-    <div class="cs-dark_overlay"></div>
-    <div class="container">
-      <div class="cs-hero_img wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-        <img src="assets/img/hero_img_2.png" alt="Hero Image">
-        <div class="cs-hero_img_sm">
-        <img src="assets/img/hero_img_sm.png" alt="Hero Image">
-        </div>
-      </div>
-      <div class="cs-hero_text wow fadeIn" data-wow-duration="1s" data-wow-delay="0.45s">
-        <h2 class="cs-hero_secondary_title cs-font_22 cs-font_18_sm">0 / 725 Minted</h2>
+    <!-- Start Causes Seciton -->
+    <%- include('modal/causessection.ejs') %>
+    <!-- End Causes Seciton -->
 
-        <h1 class="cs-hero_title cs-font_60 cs-font_36_sm cs-bold">A Completely new way to mint and <br>
-          earn with your own NFTs</h1>
-        <h3 class="cs-hero_subtitle cs-font_20 cs-font_16_sm cs-body_line_height">Max 3 NFTs Per Wallet. PRICE <span class="cs-accent_color">0.02</span> ETH <br>
-          Mint is Live Until <span class="cs-accent_color">22 July</span></h3>
-        <div class="cs-btn_group">
-          <a class="cs-btn cs-btn_filed cs-accent_btn cs-modal_btn" data-modal="mint"><span>MINT NOW!</span></a>
-          <a class="cs-btn cs-color1"><span>Join the Waitlist</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Hero -->
-  <div class="cs-height_100 cs-height_lg_70"></div>
- 
-   <!-- Start Fun Fact -->
-  <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-    <div class="row">
-      <div class="col-lg-3 col-6">
-        <div class="cs-light_bg text-center cs-radius_10">
-          <div class="cs-height_60 cs-height_lg_60"></div>
-          <div class="cs-font_64 cs-font_36_sm cs-m0 cs-primary_font cs-primary_color cs-heading_line_height cs-bold"><span data-count-to="365" class="odometer"></span></div>
-          <p class="cs-m0 cs-font_24 cs-heading_line_height cs-font_22_sm">Total Items</p>
-          <div class="cs-height_65 cs-height_lg_65"></div>
-        </div>
-        <div class="cs-height_25 cs-height_lg_25"></div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="cs-light_bg text-center cs-radius_10">
-          <div class="cs-height_60 cs-height_lg_60"></div>
-          <div class="cs-font_64 cs-font_36_sm cs-m0 cs-primary_font cs-primary_color cs-heading_line_height cs-bold"><span data-count-to="1125" class="odometer"></span></div>
-          <p class="cs-m0 cs-font_24 cs-heading_line_height cs-font_22_sm">Total Owners</p>
-          <div class="cs-height_65 cs-height_lg_65"></div>
-        </div>
-        <div class="cs-height_25 cs-height_lg_25"></div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="cs-light_bg text-center cs-radius_10">
-          <div class="cs-height_60 cs-height_lg_60"></div>
-          <div class="cs-font_64 cs-font_36_sm cs-m0 cs-primary_font cs-primary_color cs-heading_line_height cs-bold"><span data-count-to="1.72" class="odometer"></span></div>
-          <p class="cs-m0 cs-font_24 cs-heading_line_height cs-font_22_sm">Floor Price</p>
-          <div class="cs-height_65 cs-height_lg_65"></div>
-        </div>
-        <div class="cs-height_25 cs-height_lg_25"></div>
-      </div>
-      <div class="col-lg-3 col-6">
-        <div class="cs-light_bg text-center cs-radius_10">
-          <div class="cs-height_60 cs-height_lg_60"></div>
-          <div class="cs-font_64 cs-font_36_sm cs-m0 cs-primary_font cs-primary_color cs-heading_line_height cs-bold"><span data-count-to="42.2" class="odometer"></span>k</div>
-          <p class="cs-m0 cs-font_24 cs-heading_line_height cs-font_22_sm">Volume Traded</p>
-          <div class="cs-height_65 cs-height_lg_65"></div>
-        </div>
-        <div class="cs-height_25 cs-height_lg_25"></div>
-      </div>
-    </div>
-  </div>
-  <!-- End Fun Fact -->
-  <div class="cs-height_70 cs-height_lg_40"></div>
-  <!-- Start Tending Item -->
-  <div class="cs-slider cs-style1 cs-gap-24 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="cs-slider_container" data-autoplay="1" data-loop="1" data-speed="600" data-center="1" data-fade-slide="0"  data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="3" data-md-slides="4" data-lg-slides="5" data-add-slides="6">
-      <div class="cs-slider_wrapper">
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/nft1.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/nft2.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product3.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product4.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product5.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product6.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product7.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product1.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product2.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product3.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product4.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product5.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product6.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-        <div class="cs-slide">
-          <a href="#" class="cs-image_box cs-style2">
-            <div class="cs-image_box_in cs-white_bg">
-              <div class="cs-image_box_img"><img src="assets/img/product7.png" alt="Product"></div>
-            </div>
-          </a>
-        </div><!-- .cs-slide -->
-      </div>
-    </div><!-- .cs-slider_container -->
-    <div class="cs-pagination cs-style1 cs-hide_desktop cs-accent_color"></div>
-    <!-- <div class="cs-slider_arrows cs-style1 cs-center">
-      <div class="cs-left_arrow cs-center cs-radius_3 cs-accent_bg_hover cs-white_bg cs-white_color_hover">
-        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 4.32031L8 12.3203L16 20.3203" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>              
-      </div>
-      <div class="cs-right_arrow cs-center cs-radius_3 cs-accent_bg_hover cs-white_bg cs-white_color_hover">
-        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 4.32031L16 12.3203L8 20.3203" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>              
-      </div>
-    </div> -->
-  </div><!-- .cs-slider -->
-  <!-- End Tending Item -->
-  <!-- Start Causes Seciton -->
-  <section>
-    <div class="cs-height_95 cs-height_lg_65"></div>
-    <div class="container">
-      <div class="cs-seciton_heading cs-style1 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-        <h3 class="cs-section_title cs-font_16 cs-font_14_sm cs-gradient_color">Simple Steps</h3>
-        <h2 class="cs-section_subtitle cs-m0 cs-font_36 cs-font_24_sm">Minting Techniques</h2>
-      </div>
-      <div class="cs-height_50 cs-height_lg_30"></div>
-      <div class="row wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-        <div class="col-xl-3 col-md-6">
-          <div class="cs-card cs-style3 text-center cs-light_bg">
-            <div class="cs-card_in">
-              <div class="cs-card_number cs-font_30 cs-font_24_sm cs-primary_font cs-body_line_height cs-center">1</div>
-              <h3 class="cs-card_title cs-font_30 cs-font_24_sm cs-m0">Connect Your Wallet</h3>
-            </div>
-          </div>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="cs-card cs-style3 text-center cs-light_bg">
-            <div class="cs-card_in">
-              <div class="cs-card_number cs-font_30 cs-font_24_sm cs-primary_font cs-body_line_height cs-center">2</div>
-              <h3 class="cs-card_title cs-font_30 cs-font_24_sm cs-m0">Select Your Quantity</h3>
-            </div>
-          </div>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="cs-card cs-style3 text-center cs-light_bg">
-            <div class="cs-card_in">
-              <div class="cs-card_number cs-font_30 cs-font_24_sm cs-primary_font cs-body_line_height cs-center">3</div>
-              <h3 class="cs-card_title cs-font_30 cs-font_24_sm cs-m0">Transection Confirm</h3>
-            </div>
-          </div>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="cs-card cs-style3 text-center cs-light_bg">
-            <div class="cs-card_in">
-              <div class="cs-card_number cs-font_30 cs-font_24_sm cs-primary_font cs-body_line_height cs-center">4</div>
-              <h3 class="cs-card_title cs-font_30 cs-font_24_sm cs-m0">Recive Your NFTs</h3>
-            </div>
-          </div>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Causes Seciton -->
+    <!-- Start Mint Modal -->
+    <%- include('modal/mint.ejs') %>
+    <!-- End Mint Modal -->
 
-   <!-- Start Mint Modal -->
-   <div class="cs-modal" data-modal="mint">
-    <div class="cs-modal_in">
-      <div class="cs-modal_container cs-white_bg">
-        <button class="cs-close_modal cs-center cs-primary_bg">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM0.292893 10.2929C-0.0976311 10.6834 -0.0976311 11.3166 0.292893 11.7071C0.683417 12.0976 1.31658 12.0976 1.70711 11.7071L0.292893 10.2929ZM1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L1.70711 0.292893ZM10.2929 11.7071C10.6834 12.0976 11.3166 12.0976 11.7071 11.7071C12.0976 11.3166 12.0976 10.6834 11.7071 10.2929L10.2929 11.7071ZM10.2929 0.292893L0.292893 10.2929L1.70711 11.7071L11.7071 1.70711L10.2929 0.292893ZM0.292893 1.70711L10.2929 11.7071L11.7071 10.2929L1.70711 0.292893L0.292893 1.70711Z" fill="white"/>
-          </svg>            
-        </button>
-        <div class="cs-mint_secton">
-          <h2 class="cs-font_22 text-uppercase cs-normal cs-m0 text-center">Collect your NFT before <br>the deadline.</h2>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-          <div class="cs-mint_avatar text-center"><img src="assets/img/avatar_1.png" alt=""></div>
-          <div class="cs-height_50 cs-height_lg_30"></div>
-          <ul class="cs-list cs-style2 cs-mp0 cs-primary_color cs-primary_font">
-            <li>
-              <div class="cs-list_left">Remaining</div>
-              <div class="cs-list_right">725 / 725 Minted</div>
-            </li>
-            <li>
-              <div class="cs-list_left">Quantity / <span class="cs-accent_color">0.25 ETH</span></div>
-              <div class="cs-list_right">
-                <div class="cs-quantity">
-                  <button class="cs-quantity_btn cs-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M20 12H4"/></svg>
-                  </button>
-                  <input type="text" value="1" class="cs-quantity_number">
-                  <button class="cs-quantity_btn cs-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="cs-list_left">Total Price</div>
-              <div class="cs-list_right">0.5 ETH</div>
-            </li>
-          </ul>
-          <div class="cs-height_25 cs-height_lg_25"></div>
-          <button id ="mint_NFT" class="cs-btn cs-btn_filed cs-accent_btn text-center text-uppercase w-100" > <span>Mint Now</span></button>
-          <!-- firework-->
-          <div class="firework-container">
-            <div class="pyro">
-              <div class="before"></div>
-              <div class="after"></div>
-            </div>
-          </div>
-          <!-- End firework -->
-          <div class="cs-height_15 cs-height_lg_15"></div>
-          <p class="cs-m0 text-center">Presale & whitelist : Soldout</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Start Mint Modal -->
-  
-  
- 
+    <!-- Start roadmap Modal -->
+    <%- include('modal/roadmap.ejs') %>
+
+    <!-- End roadmap Modal -->
+
     <!-- Start Footer -->
-    <footer class="cs-footer text-center">
-      <div class="container">
-        <div class="cs-height_100 cs-height_lg_70"></div>
-        <div class="cs-footer_logo wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-          <img src="assets/img/logo_footer.svg" alt="logo" class="cs-hide_dark">
-          <img src="assets/img/logo_footer_white.svg" alt="logo" class="cs-hide_white">
-        </div>
-        <div class="cs-height_25 cs-height_lg_25"></div>
-        <div class="cs-social_btns cs-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-          <a href="#" class="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="m23.446 18l.889-5.791h-5.557V8.451c0-1.584.776-3.129 3.265-3.129h2.526V.392S22.277.001 20.085.001c-4.576 0-7.567 2.774-7.567 7.795v4.414H7.431v5.791h5.087v14h6.26v-14z"/></svg>                
-          </a>
-          <a href="#" class="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578a9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25a13.229 13.229 0 0 1-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 0 0 3.96 9.824a4.647 4.647 0 0 1-2.11-.583v.06a4.66 4.66 0 0 0 3.737 4.568a4.692 4.692 0 0 1-2.104.08a4.661 4.661 0 0 0 4.352 3.234a9.348 9.348 0 0 1-5.786 1.995a9.5 9.5 0 0 1-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254c0-.2-.005-.402-.014-.602a9.47 9.47 0 0 0 2.323-2.41l.002-.003Z"/></svg>                
-          </a>
-          <a href="#" class="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><mask id="svgIDa1"><g fill="none"><path fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="M34 6H14a8 8 0 0 0-8 8v20a8 8 0 0 0 8 8h20a8 8 0 0 0 8-8V14a8 8 0 0 0-8-8Z"/><path fill="#000" stroke="#000" stroke-linejoin="round" stroke-width="4" d="M24 32a8 8 0 1 0 0-16a8 8 0 0 0 0 16Z"/><path fill="#000" d="M35 15a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z"/></g></mask><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa1)"/></svg>                 
-          </a>
-          <a href="#" class="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><g clip-path="url(#svgIDa2)"><path fill="currentColor" d="M23.5 6.507a2.786 2.786 0 0 0-.766-1.27a3.05 3.05 0 0 0-1.338-.742C19.518 4 11.994 4 11.994 4a76.624 76.624 0 0 0-9.39.47a3.16 3.16 0 0 0-1.338.76c-.37.356-.638.795-.778 1.276A29.09 29.09 0 0 0 0 12c-.012 1.841.151 3.68.488 5.494c.137.479.404.916.775 1.269c.371.353.833.608 1.341.743c1.903.494 9.39.494 9.39.494a76.8 76.8 0 0 0 9.402-.47a3.05 3.05 0 0 0 1.338-.742a2.78 2.78 0 0 0 .765-1.27A28.38 28.38 0 0 0 24 12.023a26.579 26.579 0 0 0-.5-5.517ZM9.602 15.424V8.577l6.26 3.424l-6.26 3.423Z"/></g><defs><clipPath id="svgIDa2"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>               
-          </a>
-          <a href="#" class="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15"><path fill="currentColor" d="M5 4.768a.5.5 0 0 1 .761.34l.14.836a.5.5 0 0 1-.216.499l-.501.334A4.501 4.501 0 0 1 5 5.5v-.732ZM9.5 10a4.5 4.5 0 0 1-1.277-.184l.334-.5a.5.5 0 0 1 .499-.217l.836.14a.5.5 0 0 1 .34.761H9.5Z"/><path fill="currentColor" fill-rule="evenodd" d="M0 7.5a7.5 7.5 0 1 1 3.253 6.182l-2.53 1.265a.5.5 0 0 1-.67-.67l1.265-2.53A7.467 7.467 0 0 1 0 7.5Zm4.23-3.42l.206-.138a1.5 1.5 0 0 1 2.311 1.001l.14.837a1.5 1.5 0 0 1-.648 1.495l-.658.438A4.522 4.522 0 0 0 7.286 9.42l.44-.658a1.5 1.5 0 0 1 1.494-.648l.837.14a1.5 1.5 0 0 1 1.001 2.311l-.138.207a.5.5 0 0 1-.42.229h-1A5.5 5.5 0 0 1 4 5.5v-1a.5.5 0 0 1 .23-.42Z" clip-rule="evenodd"/></svg>                 
-          </a>
-        </div>
-      </div>
-      <div class="cs-height_45 cs-height_lg_25"></div>
-      <div class="container">
-        <div class="cs-copyright text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">Copyright © 2022. All Rights Reserved by <span class="cs-primary_font cs-primary_color">AENFT</span></div>
-      </div>
-      <div class="cs-height_25 cs-height_lg_25"></div>
-    </footer>
+    <%- include('modal/footer.ejs') %>
+
     <!-- End Footer -->
-  </div>
 
-
-<!-- Toast Notifications Container -->
-<div id="toast-container" class="toast-container">
-  <!-- Success Toast -->
-  <div class="toast toast-success">
-    <div class="toast-content">
-      <p class="toast-title">Successful</p>
-    </div>
-  </div>
-<!-- end noti-->
-
-
-  <!-- Script -->
-  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/plugins/jquery.slick.min.js"></script>
-  <script src="assets/js/plugins/jquery.counter.min.js"></script>
-  <script src="assets/js/plugins/wow.min.js"></script>
-  <script src="assets/js/plugins/ripples.min.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <!-- Script -->
+    <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/plugins/jquery.slick.min.js"></script>
+    <script src="assets/js/plugins/jquery.counter.min.js"></script>
+    <script src="assets/js/plugins/wow.min.js"></script>
+    <script src="assets/js/plugins/ripples.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
