@@ -967,8 +967,8 @@ hr {
 
 .cs-accent_btn {
   color: #fff;
-  background-color: #0052FF;
-  border-color: #0052FF;
+  background-color: #687F6A;
+  border-color:  #687F6A;
 }
 
 .cs-accent_btn:hover {
@@ -2669,6 +2669,12 @@ ul.cs-list.cs-style2 li:not(:last-child) {
   height: 45px;
 }
 
+.logosize img{
+
+Height: 220px;
+
+}
+
 @media screen and (min-width: 1200px) {
   .cs-main_header {
     position: relative;
@@ -3609,7 +3615,7 @@ li.menu-item-has-children
   height: 180px;
   border-radius: 50%;
   padding: 30px;
-  margin-left: auto;
+  margin-left: 100px;
   margin-right: auto;
 }
 
@@ -3622,58 +3628,19 @@ li.menu-item-has-children
           transform: translateY(0px);
 }
 
-.cs-image_box.cs-style1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 300px;
-  border: 1px solid rgba(0, 82, 255, 0.1);
-  padding: 20px 15px 5px;
-  position: relative;
-  margin-top: 5px;
-}
 
-.cs-image_box.cs-style1::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: -5px;
-  top: -5px;
-  background-color: rgba(0, 82, 255, 0.1);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 
-.cs-image_box.cs-style1 img {
-  max-height: 100%;
-}
-
-.cs-image_box.cs-style1:hover {
-  border-color: rgba(0, 82, 255, 0.2);
-}
-
-.cs-image_box.cs-style1:hover::before {
-  background-color: rgba(0, 82, 255, 0.2);
-  left: 0;
-  top: 0;
-}
 
 .cs-image_box.cs-style2 {
   display: block;
-  background: linear-gradient(108.18deg, #EA4C89 -2.02%, #4D44C6 100%);
-  padding: 1px;
-  border-radius: 10px;
+  margin-right: 50px;
+
+
 }
 
 .cs-image_box.cs-style2 img {
-  max-height: 100%;
+  max-width: 200%;
+  max-height: auto;
 }
 
 .cs-image_box.cs-style2 .cs-image_box_in {
@@ -3683,7 +3650,7 @@ li.menu-item-has-children
 
 .cs-image_box.cs-style2 .cs-image_box_img {
   
-  border-radius: inherit;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3693,14 +3660,12 @@ li.menu-item-has-children
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 250px;
+  height: 200px;
+  margin: 25px;
 }
 
 @media screen and (max-width: 575px) {
-  .cs-image_box.cs-style1 {
-    height: 200px;
-    padding: 20px 10px 5px;
-  }
+
   .cs-image_box.cs-style2 .cs-image_box_img {
     height: 190px;
   }
@@ -3730,7 +3695,8 @@ li.menu-item-has-children
 .cs-dark {
  /* background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/5-dots.png");
   background-repeat: repeat;*/
-  background-color: #141616;
+  background-color: #03011D;
+  /* cho nay test bg hình */
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -3745,7 +3711,7 @@ li.menu-item-has-children
 }
 
 .cs-dark .cs-form_field_wrap label {
-  background-color: #06182c;
+  background-color: #03011D;
 }
 
 .cs-dark .cs-btn,
@@ -3765,7 +3731,10 @@ li.menu-item-has-children
 
 .cs-dark .cs-white_bg,
 .cs-dark .cs-nav .cs-nav_list ul {
-  background-color: #283645;
+
+  background-color: transparent
+ 
+  
 }
 
 .cs-dark .cs-primary_btn {
@@ -3795,16 +3764,16 @@ li.menu-item-has-children
 
 .cs-dark .cs-accent_color,
 .cs-dark .cs-accent_color_hover:hover {
-  color: #0052FF;
+  color: #03011D;
 }
 
 .cs-dark .cs-accent_bg,
 .cs-dark .cs-accent_bg_hover:hover {
-  background-color: #0052FF;
+  background-color: #03011D;
 }
 
 .cs-dark .cs-site_header.cs-style1.cs-sticky-active {
-  background-color: #0a2540;
+  background-color: #03011D;
 }
 
 .cs-dark .cs-hide_dark {
