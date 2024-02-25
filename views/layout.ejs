@@ -19,7 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="process.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script>var socket = io("http://localhost:3000"); </script>
+    <script>var socket = io("http://localhost"); </script>
     <script src = "scripts/web3.js"></script>
   </head>
 
@@ -36,12 +36,11 @@
 
     <!-- Start Hero -->
     <%- include('modal/bigimage.ejs') %>
-
     <%- include('modal/listnft.ejs') %>
     <!-- End Hero -->
-    <div class="cs-height_100 cs-height_lg_70"></div>
+
     <%- include('modal/aboutus.ejs') %>
-    <div class="cs-height_100 cs-height_lg_40"></div>
+
     <%- include('modal/service.ejs') %>
     <div class="cs-height_100 cs-height_lg_40"></div>
     <!-- Start Fun Fact -->
@@ -52,9 +51,7 @@
 
     <!-- End Tending Item -->
 
-    <!-- Start Causes Seciton -->
-    <%- include('modal/causessection.ejs') %>
-    <!-- End Causes Seciton -->
+
 
     <!-- Start Mint Modal -->
     <%- include('modal/mint.ejs') %>
@@ -64,6 +61,7 @@
     <%- include('modal/roadmap.ejs') %>
 
     <!-- End roadmap Modal -->
+    <%- include('modal/joinus.ejs') %>
 
     <!-- Start Footer -->
     <%- include('modal/footer.ejs') %>

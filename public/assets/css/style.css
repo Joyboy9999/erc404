@@ -89,6 +89,12 @@ h6 {
 .cs-secondary_font {
   font-family: 'Inter', sans-serif;
 }
+.cs-third_font{
+  font-family: 'Oxanium';
+  font-size: 20px;
+}
+
+
 
 h1 {
   font-size: 56px;
@@ -161,6 +167,29 @@ a {
   transition: all 0.3s ease;
 }
 
+#about {
+  background-image: url("../img/aboutbg.png");
+  height: 610px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#minttut {
+  margin-top: 60px;
+  background-image: url("../img/minttut.png");
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#roadmap{
+  margin-top: 60px;
+  height: 1006px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/roadmap.png");
+}
 button {
   color: inherit;
   -webkit-transition: all 0.3s ease;
@@ -700,6 +729,9 @@ hr {
   border-top: 1px solid #f2f1ff;
 }
 
+txt {
+  font-family: 'Oxanium'
+}
 .cs-bg {
   background-size: cover;
   background-repeat: no-repeat;
@@ -754,7 +786,7 @@ hr {
 }
 
 .cs-gradient_color {
-  background: linear-gradient(108.18deg, #ea4c89 -12.02%, #4d44c6 60%);
+  background: #FAB2F1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1050,6 +1082,20 @@ hr {
       flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
+          align-items: center;
+
+}
+.cs-btn_group2{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+          justify-content: center;
           align-items: center;
 }
 
@@ -1866,6 +1912,9 @@ ul.cs-list.cs-style2 li:not(:last-child) {
 ----------------------------------------------------------------*/
 .cs-slider {
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slick-slide > div {
@@ -2634,6 +2683,7 @@ ul.cs-list.cs-style2 li:not(:last-child) {
 .cs-site_header_style1 .cs-nav .cs-nav_list > li.current-menu-item > a:before {
   bottom: -4px;
   background-color: #fff;
+
 }
 
 @media screen and (max-width: 1199px) {
@@ -3332,7 +3382,7 @@ li.menu-item-has-children
 @media screen and (max-width: 991px) {
   .cs-hero.cs-style1 .cs-hero_img {
     margin-top: 30px;
-    position: relative;
+    
     display: inline-block;
     right: initial;
     left: 50%;
@@ -3360,11 +3410,17 @@ li.menu-item-has-children
   }
 }
 
+.cs-iconbox_title{
+  text-align: center;
+}
+
 .cs-iconbox.cs-style1 {
-  padding: 40px;
+  padding: 20px;
   border-radius: 10px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  text-align: justify;
+  height: 500px;
 }
 
 .cs-iconbox.cs-style1:hover {
@@ -3804,13 +3860,17 @@ li.menu-item-has-children
 }
 
 .cs-dark .cs-cta.cs-style1 {
-  background: linear-gradient(108.18deg, rgba(234, 76, 137, 0.2) -2.02%, rgba(77, 68, 198, 0.2) 100%);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background-image: url("../img/bgbot.png");
+  background-repeat: no-repeat;
+
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0);
+  
 }
 
+
 .cs-dark .cs-light_bg {
-  background: linear-gradient(108.18deg, rgba(234, 76, 137, 0.1) -2.02%, rgba(77, 68, 198, 0.1));
+  background: #1A1A1A;
 }
 
 .cs-dark .cs-form_field {
@@ -3830,6 +3890,7 @@ li.menu-item-has-children
   .cs-dark .cs-nav .cs-nav_list {
     background-color: #283645;
     border-color: rgba(255, 255, 255, 0.1);
+   
   }
 }
 /*# sourceMappingURL=style.css.map */
