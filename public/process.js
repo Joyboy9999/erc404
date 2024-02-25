@@ -25,7 +25,7 @@ $(document).ready(function () {
         $(".firework-container").hide();
       }, 3000);
       
-      showToast("success");
+      showToast("error");
       $.post(
         "./setuser",
         {
